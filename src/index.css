@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+.custom-fadein {
+    animation: fadeIn .5s forwards;
+}
+
+.disabled {
+    opacity: .3;
+    pointer-events: none;
+}
+
+
+@keyframes fadeIn {
+    0% {
+        transform: scale(.90);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
