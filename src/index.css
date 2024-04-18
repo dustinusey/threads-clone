@@ -13,6 +13,13 @@
     pointer-events: none;
 }
 
+.gif {
+    transition: opacity .2s ease;
+}
+.gif-container:hover > .gif:not(:hover) {
+    opacity: 0.3;
+}
+
 
 @keyframes fadeIn {
     0% {

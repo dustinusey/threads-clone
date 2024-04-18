@@ -4,7 +4,7 @@ import Login from "./Pages/Login";
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
 
   const [createPost, setCreatePost] = useState(false);
 

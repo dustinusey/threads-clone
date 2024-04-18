@@ -10,7 +10,7 @@ import MenuItem from "./MenuItem";
 
 const Menu = () => {
   return (
-    <ul className="text-[#B3B3B3] dark:text-[#4E5256] flex justify-center items-center gap-[60px] text-2xl">
+    <ul className="text-[#B3B3B3] dark:text-[#4E5256] flex justify-center items-center text-2xl">
       <MenuItem icon={<FontAwesomeIcon icon={faHouse} />} active={true} />
       <MenuItem
         icon={<FontAwesomeIcon icon={faMagnifyingGlass} />}

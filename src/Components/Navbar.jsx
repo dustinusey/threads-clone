@@ -3,7 +3,7 @@ import Menu from "./Menu";
 const Navbar = (props) => {
   const { darkMode } = props;
   return (
-    <div className="w-full max-w-7xl m-auto p-4 flex justify-between">
+    <div className="w-full max-w-7xl m-auto px-4 py-1 flex justify-between items-center">
       {/* logo */}
       <svg
         className="size-[35px] hover:scale-110 duration-200 cursor-pointer"

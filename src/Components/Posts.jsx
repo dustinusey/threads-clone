@@ -5,7 +5,7 @@ const Posts = (props) => {
   console.log(posts);
   return (
     <div>
-      {posts.map((post, index) => {
+      {[...posts].reverse().map((post, index) => {
         return <Post key={index} post={post} />;
       })}
     </div>
