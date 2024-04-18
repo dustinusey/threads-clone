@@ -1,8 +1,8 @@
-# React + Vite
+# THREADS CLONE
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is still a huge work in progress
+If you'd like to contribute, fork this repo, create a feature branch and have at it.
 
-Currently, two official plugins are available:
+Create a `.env.local` file in the root of the project and create a variable exactly named: `VITE_GIPHY_API` and add in your own Giphy API in order for the Gif features to work.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+More to come!
