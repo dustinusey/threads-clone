@@ -4,7 +4,8 @@ import SearchedGifs from "./SearchedGifs";
 import TrendingGifs from "./TrendingGifs";
 
 const GifSelector = (props) => {
-  const { setCreatePost, setGifSelectModal } = props;
+  const { setCreatePost, setGifSelectModal, gif, currentGif, setCurrentGif } =
+    props;
 
   const [inputVal, setInputVal] = useState("");
   const [showTrendingGifs, setShowTrendingGifs] = useState(true);
@@ -41,13 +42,13 @@ const GifSelector = (props) => {
         >
           Cancel
         </button>
-        <p className=" -translate-x-1/2 -translate-y-1/2 absolute  top-[10px] left-1/2">
+        <p className=" -translate-x-1/2 -translate-y-1/2 absolute top-[10px] left-1/2">
           Choose a GIF
         </p>
       </div>
       {/* modal */}
-      <div className="dark:bg-zinc-800 min-h-[100px] rounded-2xl border-[1px] border-zinc-700 max-h-[80vh] overflow-auto scrollbar-hide">
-        <div className="sticky top-0 z-10 bg-zinc-800 p-3">
+      <div className="bg-white dark:bg-zinc-800 min-h-[100px] rounded-2xl border-[1px] border-zinc-700 max-h-[80vh] overflow-auto scrollbar-hide">
+        <div className="sticky top-0 z-10 bg-white dark:bg-zinc-800 p-3">
           <input
             onChange={(e) => {
               setInputVal(e.target.value);
@@ -60,7 +61,7 @@ const GifSelector = (props) => {
                 ? (setShowSearchedGifs(true), setShowTrendingGifs(false))
                 : "";
             }}
-            className=" w-full p-4 rounded-md bg-zinc-700 outline-none text-zinc-300 font-lg"
+            className="bg-zinc-200 w-full p-4 rounded-md dark:bg-zinc-700 outline-none text-black dark:text-zinc-300 font-lg"
             type="text"
             placeholder="Search Giphy"
             autoFocus
@@ -68,8 +69,25 @@ const GifSelector = (props) => {
           />
         </div>
 
-        {showTrendingGifs && <TrendingGifs />}
-        {showSearchedGifs && <SearchedGifs searchedGifs={searchedGifs} />}
+        {showTrendingGifs && (
+          <TrendingGifs
+            gif={gif}
+            currentGif={currentGif}
+            setCurrentGif={setCurrentGif}
+            setCreatePost={setCreatePost}
+            setGifSelectModal={setGifSelectModal}
+          />
+        )}
+        {showSearchedGifs && (
+          <SearchedGifs
+            gif={gif}
+            currentGif={currentGif}
+            setCurrentGif={setCurrentGif}
+            searchedGifs={searchedGifs}
+            setCreatePost={setCreatePost}
+            setGifSelectModal={setGifSelectModal}
+          />
+        )}
       </div>
     </div>
   );

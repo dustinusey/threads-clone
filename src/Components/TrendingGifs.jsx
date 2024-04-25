@@ -2,7 +2,15 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Gif from "./Gif";
 
-const TrendingGifs = () => {
+const TrendingGifs = (props) => {
+  const {
+    img,
+    currentGif,
+    setCurrentGif,
+    gif,
+    setCreatePost,
+    setGifSelectModal,
+  } = props;
   const [trendingGifs, setTrendingGifs] = useState([]);
   useEffect(() => {
     getTrendingGifs();
@@ -20,7 +28,16 @@ const TrendingGifs = () => {
   return (
     <div className="flex flex-wrap p-3 gif-container">
       {trendingGifs.map((gif, index) => {
-        return <Gif key={index} gif={gif.images.original.url} />;
+        return (
+          <Gif
+            setGifSelectModal={setGifSelectModal}
+            setCreatePost={setCreatePost}
+            key={index}
+            img={gif.images.original.url}
+            gif={gif}
+            setCurrentGif={setCurrentGif}
+          />
+        );
       })}
     </div>
   );
