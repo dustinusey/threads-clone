@@ -7,6 +7,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import MenuItem from "./MenuItem";
+import LogoutBtn from "./LogoutBtn";
 
 const Menu = () => {
   return (
@@ -22,6 +23,7 @@ const Menu = () => {
       />
       <MenuItem icon={<FontAwesomeIcon icon={faHeart} />} active={false} />
       <MenuItem icon={<FontAwesomeIcon icon={faUser} />} active={false} />
+      <LogoutBtn />
     </ul>
   );
 };
