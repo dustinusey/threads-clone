@@ -1,14 +1,16 @@
 import { useRef, useState } from "react";
 import Feed from "./Pages/Feed";
 import Login from "./Pages/Login";
+import { useContext } from "react";
+import { UserContext } from "./Components/UserProvider";
 
 const App = () => {
+  // Global state from UserProvider
+  const { isLoggedIn } = useContext(UserContext);
   // gifs
-
   const gif = useRef("");
   const [currentGif, setCurrentGif] = useState("");
 
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [darkMode, setDarkMode] = useState(true);
 
   const [createPost, setCreatePost] = useState(false);
@@ -18,7 +20,7 @@ const App = () => {
   return (
     <div className={darkMode ? "dark" : ""}>
       {!isLoggedIn ? (
-        <Login isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
+        <Login />
       ) : (
         <Feed
           gif={gif.current}
