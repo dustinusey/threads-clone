@@ -5,7 +5,8 @@ import { UserContext } from "../Components/UserProvider";
 const LogoutBtn = () => {
   const { user, setUser, setIsLoggedIn } = useContext(UserContext);
 
-  const googleSignout = () => {
+  // Signs out the user from all Firebase Authentication services
+  const firebaseAuthSignOut = () => {
     const auth = getAuth();
     signOut(auth)
       .then(() => {
@@ -20,10 +21,10 @@ const LogoutBtn = () => {
 
   return (
     <button
-      onClick={googleSignout}
+      onClick={firebaseAuthSignOut}
       className="rounded-md mt-2 p-1 bg-white text-xs"
     >
-      Logout of Google
+      Logout
     </button>
   );
 };
